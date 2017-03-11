@@ -6,4 +6,12 @@ defmodule ProblemModule do
   def fib(n), do: fib(n - 1) + fib(n - 2)
 
   ## iex(n)> ProblemModule.fib(10) = 55
+
+  ## Factorial
+  def fact(0), do: 1
+  def fact(n) when n > 0 do
+    n * fact(n - 1)
+  end
+
+  ## iex(n)> ProblemModule.fact(5) = 120
 end
