@@ -1,18 +1,9 @@
 defmodule ProblemModule do
-  @moduledoc """
-  Documentation for ProblemModule.
-  """
+  ## Fibonacci Sequence
+  def fib(0), do: 0
+  def fib(1), do: 1
 
-  @doc """
-  Hello world.
+  def fib(n), do: fib(n - 1) + fib(n - 2)
 
-  ## Examples
-
-      iex> ProblemModule.hello
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  ## iex(n)> ProblemModule.fib(10) = 55
 end
