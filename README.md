@@ -1,6 +1,6 @@
 # ProblemModule
 
-** Solving Problems with Elixir, Feel free to add one! **
+**Solving Problems with Elixir, Feel free to add one!**
 
 ## Installation
 
