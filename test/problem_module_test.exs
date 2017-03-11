@@ -2,7 +2,11 @@ defmodule ProblemModuleTest do
   use ExUnit.Case
   doctest ProblemModule
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  test "#fib" do
+    assert ProblemModule.fib(10) == 55
+  end
+
+  test "#Fact" do
+    assert ProblemModule.fact(5) == 120
   end
 end
