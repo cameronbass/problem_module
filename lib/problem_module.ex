@@ -13,6 +13,12 @@ defmodule ProblemModule do
   end
   ## iex(n)> ProblemModule.fact(5) = 120
 
+  ## Exponent
+  def exp(0), do: 0
+  def exp(1), do: 1
+  def exp(n) when n > 0 do
+    :math.pow(n, n)
+  end
   ## Spawn_process - Practice making 5 concurrent processes
   def add(a, b) do
     IO.puts(a + b)
