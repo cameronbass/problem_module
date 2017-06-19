@@ -17,4 +17,16 @@ defmodule ProblemModule do
   def add(a, b) do
     IO.puts(a + b)
   end
+
+  @list_items %{apples: 2, orange: 1, banana: 3}
+
+  def purchase(items) do
+    Enum.sum(for {name, quantity} <- items, do: @list_items[name] * quantity)
+  end
+
+  def purchase(items, _) do
+    items
+    |> Enum.to_list()
+    |> List.foldl(0, fn {key, value}, acc -> @list_items[key] * value + acc end)
+  end
 end
