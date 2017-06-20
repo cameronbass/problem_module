@@ -15,4 +15,8 @@ defmodule ProblemModuleTest do
     assert ProblemModule.purchase(%{orange: 2, banana: 10}, %{}) == 32
     assert ProblemModule.purchase == "You should get FOOD!!!"
   end
+
+  test "#filter_fun" do
+    assert ProblemModule.filter_fun([1,2,3]) == 4
+  end
 end

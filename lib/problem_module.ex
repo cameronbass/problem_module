@@ -1,4 +1,5 @@
 defmodule ProblemModule do
+  require IEx
   ## Fibonacci Sequence
   def fib(0), do: 0
   def fib(1), do: 1
@@ -34,9 +35,17 @@ defmodule ProblemModule do
     |> Enum.to_list()
     |> List.foldl(0, fn {key, value}, acc -> @list_items[key] * value + acc end)
   end
+
+  def filter_fun(list) do
+    list
+    |> Enum.filter_map(fn(x) -> rem(x, 2) == 0 end, &(&1 * 2))
+    |> List.first
+  end
 end
 
+IO.puts ProblemModule.filter_fun([1,2,3,4])
+
 one_way = fn(a,b,c) -> (a + b) * c end
-another_way = &((&1 + &3) * &2)
-IO.puts one_way.(2,3,5)
-IO.puts another_way.(2,3,5)
+another_way = &((&1 + &2) * &3)
+one_way.(2,3,5) ## 25
+another_way.(2,3,5) ## 25
