@@ -36,4 +36,7 @@ defmodule ProblemModule do
   end
 end
 
-IO.puts ProblemModule.purchase(%{apples: 8, orange: 4})
+one_way = fn(a,b,c) -> (a + b) * c end
+another_way = &((&1 + &3) * &2)
+IO.puts one_way.(2,3,5)
+IO.puts another_way.(2,3,5)
