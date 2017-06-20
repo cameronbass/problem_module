@@ -18,7 +18,12 @@ defmodule ProblemModule do
     IO.puts(a + b)
   end
 
+  ## Purchasing food from the grocery store.
   @list_items %{apples: 2, orange: 1, banana: 3}
+
+  def purchase do
+    "You should get FOOD!!!"
+  end
 
   def purchase(items) do
     Enum.sum(for {name, quantity} <- items, do: @list_items[name] * quantity)
@@ -30,3 +35,5 @@ defmodule ProblemModule do
     |> List.foldl(0, fn {key, value}, acc -> @list_items[key] * value + acc end)
   end
 end
+
+IO.puts ProblemModule.purchase(%{apples: 8, orange: 4})
