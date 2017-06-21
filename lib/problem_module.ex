@@ -43,7 +43,21 @@ defmodule ProblemModule do
   end
 end
 
-IO.puts ProblemModule.filter_fun([1,2,3,4])
+# Anonymous Functions
+
+fizzbuzz = fn
+  (0, 0, _) -> "FizzBuzz"
+  (0, _, _) -> "Fizz"
+  (_, 0, _) -> "Buzz"
+  (_, _, a) -> a
+end
+
+fb = fn n -> fizzbuzz.(rem(n, 3), rem(n, 5), n) end
+
+(1 .. 100) |> Enum.map(fb) |> Enum.each(&IO.puts/1)
+
+
+ProblemModule.filter_fun([1,2,3,4])
 
 one_way = fn(a,b,c) -> (a + b) * c end
 another_way = &((&1 + &2) * &3)
