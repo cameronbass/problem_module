@@ -43,18 +43,23 @@ defmodule ProblemModule do
   end
 end
 
-# Anonymous Functions
+# range = 1..999
+#
+# multiple_of_3_or_5? = fn(n) -> (rem(n, 3) == 0 || rem(n, 5) == 0) end
+# for n <- range, multiple_of_3_or_5?.(n), do: Enum.reduce(n, 0, fn(x, y) -> (x + y) end)
 
-fizzbuzz = fn
-  (0, 0, _) -> "FizzBuzz"
-  (0, _, _) -> "Fizz"
-  (_, 0, _) -> "Buzz"
-  (_, _, a) -> a
-end
 
-fb = fn n -> fizzbuzz.(rem(n, 3), rem(n, 5), n) end
 
-(1 .. 100) |> Enum.map(fb) |> Enum.each(&IO.puts/1)
+# fizzbuzz = fn
+#   (0, 0, _) -> "FizzBuzz"
+#   (0, _, _) -> "Fizz"
+#   (_, 0, _) -> "Buzz"
+#   (_, _, a) -> a
+# end
+#
+# fb = fn n -> fizzbuzz.(rem(n, 3), rem(n, 5), n) end
+
+# (1 .. 100) |> Enum.map(fb) |> Enum.each(&IO.puts/1)
 
 
 ProblemModule.filter_fun([1,2,3,4])
